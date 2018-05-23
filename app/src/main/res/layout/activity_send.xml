@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    tools:context=".send">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/background_light"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="Complete este formulario"
+                android:textAlignment="center"
+                android:textColor="@color/defaultBgColor"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:checked="true"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Delivery"
+                    android:textColor="@color/defaultBgColor" />
+
+                <RadioButton
+                    android:id="@+id/pasar_a_buscar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Pasar a buscar"
+                    android:textColor="@color/defaultBgColor" />
+            </RadioGroup>
+
+            <TableRow
+                android:id="@+id/hora_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="time"
+                    app:srcCompat="@drawable/ic_access_time" />
+
+                <TextView
+                    android:id="@+id/hora"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:hint="Seleccione hora"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/fecha_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="showDatePickerDialog"
+                    app:srcCompat="@drawable/ic_calendar" />
+
+                <TextView
+                    android:id="@+id/fecha"
+                    android:layout_width="155dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:hint="Seleccione fecha"
+                    android:textSize="18sp" />
+            </TableRow>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/text_field_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorColor="@color/black"
+                app:hasClearButton="true"
+                app:helperTextColor="#d43800"
+                app:labelText="Nombre"
+                app:maxCharacters="10"
+                app:minCharacters="3"
+                app:primaryColor="#002fed"
+                app:secondaryColor="#009c05">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/box_edit_nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyz"
+                    android:maxLength="10" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/text_field_apellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorColor="@color/black"
+                app:hasClearButton="true"
+                app:helperTextColor="#d43800"
+                app:labelText="Apellido"
+                app:maxCharacters="10"
+                app:minCharacters="3"
+                app:primaryColor="#002fed"
+                app:secondaryColor="#009c05">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/box_edit_apellido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:digits="abcdefghijklmnñopqrstuvwxyz"
+                    android:maxLength="10" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/text_telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorColor="@color/black"
+                app:hasClearButton="true"
+                app:helperText="Ej:0981xxxxxx"
+                app:helperTextColor="#d43800"
+                app:labelText="Telefono"
+                app:maxCharacters="10"
+                app:minCharacters="10"
+                app:primaryColor="#002fed"
+                app:secondaryColor="#009c05">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/box_edit_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="10" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/text_comentario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorColor="#d43800"
+                app:hasClearButton="true"
+                app:helperText="Ej:Sin tomates, etc"
+                app:helperTextColor="#d43800"
+                app:labelText="Comentario para su pedido.(Opcional)"
+                app:maxCharacters="20"
+                app:minCharacters="0"
+                app:primaryColor="#002fed"
+                app:secondaryColor="#009c05">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/box_edit_comentario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="20" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+
+            <LinearLayout
+                android:id="@+id/o"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/recordar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Recordar datos" />
+
+                <CheckBox
+                    android:id="@+id/recubi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Recordar ubicación" />
+            </LinearLayout>
+
+            <studio.carbonylgroup.textfieldboxes.TextFieldBoxes
+                android:id="@+id/text_ubicacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:errorColor="@color/black"
+                app:hasClearButton="true"
+                app:helperText="Ej:Casa, Trabajo, etc."
+                app:helperTextColor="#d43800"
+                app:labelText="Nombre para su ubicación"
+                app:maxCharacters="10"
+                app:minCharacters="4"
+                app:primaryColor="#002fed"
+                app:secondaryColor="#009c05">
+
+                <studio.carbonylgroup.textfieldboxes.ExtendedEditText
+                    android:id="@+id/box_edit_ubicacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:maxLength="10" />
+
+            </studio.carbonylgroup.textfieldboxes.TextFieldBoxes>
+
+            <Button
+                android:id="@+id/button_enviar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/defaultBgColor"
+                android:enabled="false"
+                android:fontFamily="casual"
+                android:onClick="enviar"
+                android:text="Enviar pedido"
+                android:textColor="@color/button_pressed" />
+
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

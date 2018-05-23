@@ -1,0 +1,70 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt" >
+
+    <aapt:attr name="android:drawable">
+        <vector
+            android:width="360dp"
+            android:height="50dp"
+            android:viewportHeight="10"
+            android:viewportWidth="360">
+            <group
+                android:name="progress_group"
+                android:translateX="180"
+                android:translateY="5">
+                <path
+                    android:name="background_track"
+                    android:fillAlpha="?android:attr/disabledAlpha"
+                    android:fillColor="#FF4A45"
+                    android:pathData="M -180,-1 l 360,0 l 0,2 l -360,0 Z"/>
+                <group
+                    android:name="rect2_grp"
+                    android:scaleX="0.1"
+                    android:translateX="-197.60001">
+                    <path
+                        android:name="rect2"
+                        android:fillColor="#ffffff"
+                        android:pathData="M -144,-1 l 288,0 l 0,2 l -288,0 Z"/>
+                </group>
+                <group
+                    android:name="rect1_grp"
+                    android:scaleX="0.1"
+                    android:translateX="-522.59998">
+                    <path
+                        android:name="rect1"
+                        android:fillColor="?attr/colorControlActivated"
+                        android:pathData="M -144,-1 l 288,0 l 0,2 l -288,0 Z"/>
+                </group>
+            </group>
+        </vector>
+    </aapt:attr>
+
+    <target android:name="rotationGroup"> *
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:duration="1000"
+                android:propertyName="rotation"
+                android:valueFrom="0"
+                android:valueTo="360" />
+        </aapt:attr>
+    </target>
+
+    <target android:name="rect2_grp" >
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:duration="1000"
+                    android:pathData="M -197.60001,0 c 14.28182,0 85.07782,0 135.54689,0 c 54.26191,0 90.42461,0 168.24331,0 c 144.72154,0 316.40982,0 316.40982,0"
+                    android:propertyXName="translateX"
+                    android:repeatCount="infinite">
+                </objectAnimator>
+                <objectAnimator
+                    android:duration="1000"
+                    android:pathData="M 0,0.1 L 1,0.571379510698 L 2,0.909950256348 L 3,0.1"
+                    android:propertyYName="scaleX"
+                    android:repeatCount="infinite">
+                </objectAnimator>
+            </set>
+        </aapt:attr>
+    </target>
+
+</animated-vector>
